@@ -16,37 +16,45 @@
 <body>
 <div>
     <main>
-    <section class="item" id="HTC" onmouseover="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item rotate';" onclick="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item';">
+    <section class="item" id="HTC" onmouseover="
+    spins+=2
+    spins_span.innerHTML= spins; 
+    this.className = 'item rotate';" 
+    onclick="
+    hits_span.innerHTML= hits++;
+    this.className = 'item';">
         <h2>HTC</h2>
         <p>40.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg">
     </section>
-    <section class="item" id="Apple" onmouseover="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item rotate';" onclick="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item';">
+    <section class="item" id="Apple" onmouseover="spins_span.innerHTML= spins++; 
+    this.className = 'item rotate';" 
+    onclick="
+    hits_span.innerHTML= hits++; this.className = 'item';">
         <h2>Apple</h2>
         <p>75.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg">
     </section>
-    <section class="item" id="Nokia" onmouseover="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item rotate';" onclick="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item';">
+    <section class="item" id="Nokia" onmouseover="spins_span.innerHTML= spins++; 
+    this.className = 'item rotate';" 
+    onclick="
+    hits_span.innerHTML= hits++; this.className = 'item';">
         <h2>Nokia</h2>
         <p>35.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg">
     </section>
-    <section class="item" id="Samsung" onmouseover="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item rotate';" onclick="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item';">
+    <section class="item" id="Samsung" onmouseover="spins_span.innerHTML= spins++; 
+    this.className = 'item rotate';" 
+    onclick="
+    hits_span.innerHTML= hits++; this.className = 'item';">
         <h2>Samsung</h2>
         <p>45.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg">
     </section>
-    <section class="item" id="Blackberry" onmouseover="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item rotate';" onclick="hits_span.innerHTML= hits;
-    spins_span.innerHTML= spins; this.className = 'item';">
+    <section class="item" id="Blackberry" onmouseover="spins_span.innerHTML= spins++; 
+    this.className = 'item rotate';" 
+    onclick="
+    hits_span.innerHTML= hits++; this.className = 'item';">
         <h2>Blackberry</h2>
         <p>10.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg">
@@ -61,6 +69,6 @@
 </footer>
 </html> 
 <script>
-    var hits= 20
-    var spins= 50
+    var hits= 0
+    var spins= 0
 </script>

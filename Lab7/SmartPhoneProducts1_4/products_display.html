@@ -4,6 +4,7 @@
         const store_name= "Victoria Kashiwai";
         var first_name= "Victoria ";
         var last_name = "Kashiwai";
+        var over_half = false;
     </script>
   </head>
 <center>
@@ -21,6 +22,7 @@
         Hits:<span id="hits_span">0</span>
         Spins:<span id="spins_span">0</span>
         Hit/Spin:<span id="hit_spin_span">0</span>
+        You win:<span id="win_span">pending...</span>
     </p>        
 <body>
 <div>
@@ -29,10 +31,14 @@
     spins_span.innerHTML= ++spins; 
     this.className = 'item rotate';
     hit_spin_span.innerHTML = (hits_span.innerHTML/spins_span.innerHTML).toFixed(2);
+    win_span.innerHTML = ((hits/spins >= 0.5) && (hits < spins));
+    over_half = over_half || ((hits/spins >= 0.5) && (hits < spins));
     " 
     onclick="
     hits_span.innerHTML= ++hits;
-    this.className = 'item';">
+    this.className = 'item';
+    win_span.innerHTML = (hits/spins >= 0.5);
+    ">
         <h2>HTC</h2>
         <p>40.00</p>
         <img src="http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg">

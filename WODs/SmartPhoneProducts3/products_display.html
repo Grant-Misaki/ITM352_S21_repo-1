@@ -1,0 +1,52 @@
+<head>
+    <link rel="stylesheet" href="products_style.css">
+    <script>
+//Initialize product variables
+    var product1 = {
+        name: "HTC",
+        price: 40.00,
+        image: "http://dport96.github.io/ITM352/morea/080.flow-control-II/HTC.jpg"
+    }
+    var product2 = {
+        name: "Apple",
+        price: 75.00,
+        image: "http://dport96.github.io/ITM352/morea/080.flow-control-II/iphone-3gs.jpg"
+    }
+    var product3 = {
+        name: "Nokia",
+        price: 35.00,
+        image: "http://dport96.github.io/ITM352/morea/080.flow-control-II/Nokia.jpg"
+    }
+    var product4 = {
+        name: "Samsung",
+        price: 45.00,
+        image: "http://dport96.github.io/ITM352/morea/080.flow-control-II/Samsung.jpg"
+    }
+    var product5 = {
+        name: "Blackberry",
+        price: 10.00,
+        image: "http://dport96.github.io/ITM352/morea/080.flow-control-II/Blackberry.jpg"
+    } 
+// Make product array 
+    products = [product1,product2,product3,product4,product5];
+    </script>
+  </head>
+<h1>Used Smartphone Store</h1>
+<body>
+<div><main>
+    <script>
+        for (i = 0; i < products.length; i++){
+           document.write(`
+        <section class="item">
+            <h2>${products[i].name}</h2>
+            <p>$${(products[i].price).toFixed(2)}</p>
+            <img src=${products[i].image}>
+        </section>   
+        `); 
+        }
+        
+    </script>
+    
+    </main></div>
+</body>
+<h1>Your One Stop Phone Shop</h1>

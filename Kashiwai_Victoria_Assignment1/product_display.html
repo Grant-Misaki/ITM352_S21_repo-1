@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="./products_style.css">
+<script src="./product_data.js" type="text/javascript"></script>
+<script>
+    
+    //validate data in quantity textbox
+    function checkQuantityTextbox(qtyTextboxObj) {
+        var errs = isNonNegInt(qtyTextboxObj.value, true);
+        qty_textbox_message.innerHTML = errs.join(',');
+    }
+
+    //detect non-integers for quantity textbox
+    function isNonNegInt(q, returnErrors = false) {
+        errors = []; // assume no errors at first
+        if (Number(q) != q) errors.push('Not a number!'); // Check if string is a number value
+        if (q < 0) errors.push('Negative value!'); // Check if it is non-negative
+        if (parseInt(q) != q) errors.push('Not an integer!'); // Check that it is an integer
+
+        return returnErrors ? errors : (errors.length == 0);
+    }
+    //put quantities from textbox into an array
+    var quantities = [];
+    function getQuantities() {
+        for (i in products) {
+            quantities.push(eval('quantity' + i).value);
+        }
+    }
+    function generate_item_rows(product_quantities_array) {
+        for (i in products) {
+            //product row
+            if (product_quantities_array[i] == 0) continue;
+            errors = isNonNegInt(product_quantities_array[i], true);
+            var extended_price = products[i].price * product_quantities_array[i];
+            if (errors.length == 0) {
+                subtotal += extended_price;
+            } else {
+                extended_price = "";
+            }
+            document.write(`
+                <tr>
+                    <td width="43%">${products[i].name}</td>
+                    <td align="center" width="11%">${product_quantities_array[i]}<br><font color="red">${errors.join('<br>')}</font></td>
+                    <td width="13%">\$${products[i].price.toFixed(2)}</td>
+                    <td width="54%">\$${extended_price.toFixed(2)}</td>
+                </tr>
+            `);
+        }
+    }
+    function isNonNegInt(val, returnErrors = false) {
+        errors = []; // assume no errors at first
+        if (Number(val) != val) errors.push('Not a number!'); // Check if string is a number value
+        if (val < 0) errors.push('Negative value!'); // Check if it is non-negative
+        if (parseInt(val) != val) errors.push('Not an integer!'); // Check that it is an integer
+        return returnErrors ? errors : ((errors.length > 0) ? false : true);
+    }
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>Online Izakaya</h1>
+</head>
+
+<body>
+    <form action="./invoice.html" method="GET">
+    <div>
+        <main>
+            <script>
+                //display products 
+                for (i = 0; i < products.length; i++) {
+                    document.write(`
+            <section class="item">
+                <img src=${products[i].image}>
+                <h2>${products[i].name} - $${(products[i].price)}</h2>
+                <label id="quantity${i}_label"}">Quantity</label>
+                <input type="text" placeholder="0" name="quantity${i}">
+            </section>  
+            <br> 
+            `);
+                }
+            </script>
+        </main>
+    </div>
+    <input type="submit" value="Checkout">
+    </form>
+    <br>
+    <br>
+   
+</body>
+
+</html>

@@ -77,8 +77,6 @@
             </script>
         </main>
     </div>
-    <br>
-    <br>
     <input type="submit" value="Checkout">
     </form>
     <br>
@@ -101,7 +99,7 @@
         if (haserrors == false && has_quantities == true) {
             window.location.href = './invoice.html' +location.search;
         }
-        else if (has_quantities == false && has_quantities == true) {
+        else if (has_quantities == false) {
             alert('hey you need to buy something');
         }
 </script>

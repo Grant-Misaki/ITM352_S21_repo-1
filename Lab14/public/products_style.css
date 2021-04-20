@@ -1,0 +1,53 @@
+/* General */
+body {
+    text-align: center;
+    float: center;
+    background-color: white;
+    width: 100%;
+}
+/* Text */
+h1 {
+    text-align: center;
+    color: darkred;
+}
+
+h2 {
+    font-size: large;
+    text-align: center;
+    color: darkred;
+}
+p {
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    color: darkred;
+}
+/* block styling */
+main {
+    display: flex;
+    
+    
+    width: 100%;
+    
+}
+/*form styling*/
+div {
+    text-align: center;
+    float: center;
+    display: flex;
+    width: 100%;
+}
+/* styling the products display */
+img {
+    text-align: center;
+    width: 200px;
+    height: px;
+    margin: 40px;
+}
+button {
+    float: center;
+}
+
+text {
+    width:50px;
+}

@@ -8,7 +8,9 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="process_login" method="post">
+  <script>
+    document.write(`<form action="process_login${location.search}" method="post">`)
+  </script>
     <div class="imgcontainer">
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
@@ -27,8 +29,7 @@
     </div>
   
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
+      <span class="psw">Don't have an account? <a href="register.html">SIGN-UP</a></span>
     </div>
   </form>
   
